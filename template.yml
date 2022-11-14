@@ -11,9 +11,9 @@ Resources:
       FunctionName: SimpleDeployFunction
       Timeout: 300
       Handler: simple.handler
-      Runtime: python3.6
+      Runtime: python3.9
       CodeUri: build/simple.zip
-      Policies: AWSLambdaFullAccess
+      Policies: AWSLambda_FullAccess
 
   CalculateWeights:
     Type: AWS::Serverless::Function
@@ -21,9 +21,9 @@ Resources:
       FunctionName: DeployWorkflow-CalculateWeights
       Timeout: 300
       Handler: calculate_weights.handler
-      Runtime: python3.6
+      Runtime: python3.9
       CodeUri: build/calculate_weights.zip
-      Policies: AWSLambdaFullAccess
+      Policies: AWSLambda_FullAccess
 
   UpdateWeight:
     Type: AWS::Serverless::Function
@@ -31,9 +31,9 @@ Resources:
       FunctionName: DeployWorkflow-UpdateWeight
       Timeout: 300
       Handler: update_weight.handler
-      Runtime: python3.6
+      Runtime: python3.9
       CodeUri: build/update_weight.zip
-      Policies: AWSLambdaFullAccess
+      Policies: AWSLambda_FullAccess
 
   HealthCheck:
     Type: AWS::Serverless::Function
@@ -41,9 +41,9 @@ Resources:
       FunctionName: DeployWorkflow-HealthCheck
       Timeout: 300
       Handler: health_check.handler
-      Runtime: python3.6
+      Runtime: python3.9
       CodeUri: build/health_check.zip
-      Policies: AWSLambdaFullAccess
+      Policies: AWSLambda_FullAccess
 
   Rollback:
     Type: AWS::Serverless::Function
@@ -51,9 +51,9 @@ Resources:
       FunctionName: DeployWorkflow-Rollback
       Timeout: 300
       Handler: rollback.handler
-      Runtime: python3.6
+      Runtime: python3.9
       CodeUri: build/rollback.zip
-      Policies: AWSLambdaFullAccess
+      Policies: AWSLambda_FullAccess
 
   Finalize:
     Type: AWS::Serverless::Function
@@ -61,9 +61,9 @@ Resources:
       FunctionName: DeployWorkflow-Finalize
       Timeout: 300
       Handler: finalize.handler
-      Runtime: python3.6
+      Runtime: python3.9
       CodeUri: build/finalize.zip
-      Policies: AWSLambdaFullAccess
+      Policies: AWSLambda_FullAccess
 
   StateMachineExecutionRole:
     Type: "AWS::IAM::Role"
